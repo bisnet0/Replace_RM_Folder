@@ -42,12 +42,15 @@ def substituir_pasta(caminho_origem, caminho_destino):
                 os.rename(caminho_destino_item, caminho_destino_item_old)
                 print(f"Arquivo de destino renomeado para: {caminho_destino_item_old}\n")
         
+        
         # Copia o arquivo de origem para o destino ou chama recursivamente para pastas
         if os.path.isfile(caminho_origem_item):
             shutil.copy2(caminho_origem_item, caminho_destino_item)
             print(f"Arquivo de origem {caminho_origem_item} copiado para {caminho_destino_item}\n\n")
         elif os.path.isdir(caminho_origem_item):
             substituir_pasta(caminho_origem_item, caminho_destino_item)
+        else:
+            print(f"Item {caminho_origem_item} não é nem arquivo nem diretório, ignorando.\n")
 
 def substituir_varias_pastas(lista_caminhos):
     for caminho_origem, caminho_destino in lista_caminhos:
@@ -61,34 +64,45 @@ def substituir_varias_pastas(lista_caminhos):
             substituir_pasta(caminho_origem, caminho_destino)
 
 def menu_interativo():
-    escolha = input(("-------------[REPLACE FOLDER GRUPO NOBRE]-------------\n\n"
-    "---| MENU |---\n\n"
-    "1— Personalizar a UNIFAN\n"
-    "2— Personalizar a UNEF\n"
-    "3— Personalizar o Colégio Nobre\n"))
+    escolha = input(('''
+ ██████╗ ██████╗ ██╗   ██╗██████╗  ██████╗     ███╗   ██╗ ██████╗ ██████╗ ██████╗ ███████╗
+██╔════╝ ██╔══██╗██║   ██║██╔══██╗██╔═══██╗    ████╗  ██║██╔═══██╗██╔══██╗██╔══██╗██╔════╝
+██║  ███╗██████╔╝██║   ██║██████╔╝██║   ██║    ██╔██╗ ██║██║   ██║██████╔╝██████╔╝█████╗  
+██║   ██║██╔══██╗██║   ██║██╔═══╝ ██║   ██║    ██║╚██╗██║██║   ██║██╔══██╗██╔══██╗██╔══╝  
+╚██████╔╝██║  ██║╚██████╔╝██║     ╚██████╔╝    ██║ ╚████║╚██████╔╝██████╔╝██║  ██║███████╗
+ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝      ╚═════╝     ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+                                By: Henrique Bisneto\n\n'''
+    "--------------[MENU]-------------\n                                 |\n"
+    "1— Personalizar a UNIFAN         | \n"      
+    "2— Personalizar a UNEF           | \n"
+    "3— Personalizar o Colégio Nobre  | \n"
+    "---------------------------------\n"))
     
     if escolha == '1':
         # Defina os caminhos para personalizar a UNIFAN
-        lista_caminhos = [1
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\Corpore.Net', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\Corpore.Net'),
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalEducacional', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional'),
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\SmartView', r'C:\Users\Henrique Bisneto\Documents\totvs\TReports\smart-view\deployments')
+        lista_caminhos = [
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
         ]
         substituir_varias_pastas(lista_caminhos)
     elif escolha == '2':
         # Defina os caminhos para personalizar a UNEF
         lista_caminhos = [
-            (r'C:\caminho\para\origem2', r'C:\caminho\para\destino2'),
-            (r'C:\outro\caminho\origem2', r'C:\outro\caminho\destino2')
+            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
         ]
         substituir_varias_pastas(lista_caminhos)
     elif escolha == '3':
         # Defina os caminhos para personalizar o Colégio Nobre
         lista_caminhos = [
-            (r'C:\caminho\para\origem3', r'C:\caminho\para\destino3'),
-            (r'C:\outro\caminho\origem3', r'C:\outro\caminho\destino3')
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortaldoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalGestãoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
         ]
         substituir_varias_pastas(lista_caminhos)
     else:

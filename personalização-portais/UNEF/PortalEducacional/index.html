@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>UNEF - Portal do Aluno</title>
+
+    <!-- start: Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta charset="utf-8">
+
+    <meta name="description" content="TOTVS Portal - TOTVS Educacional">
+    <meta name="keywords" content="totvs">
+    <meta name="author" content="totvs">
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+    <!-- end: Meta -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://www.googletagmanager.com/gtag/js"></script>
+
+    <!-- start: Favicon and Touch Icons -->
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- end: Favicon and Touch Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="../../../js/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../js/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="../../../js/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+
+    <link rel="stylesheet" href="../../../js/libs/angular-nestable/lib/jquery.nestable.css">
+
+    <link rel="stylesheet" href="../../../js/libs/AngularJS-Toaster/toaster.min.css">
+
+    <link rel="stylesheet" href="../../../js/libs/angular-ui-select/dist/select.min.css">
+
+    <link rel="stylesheet" href="../../../js/libs/telerik.kendoui/styles/kendo.common-bootstrap.min.css">
+    <link rel="stylesheet" href="../../../js/libs/telerik.kendoui/styles/kendo.bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../../js/libs/totvs-html-framework/assets/css/totvs-html-framework.css">
+
+    <link rel="stylesheet" href="../../../js/libs/lightbox2/dist/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/icons-portal.css">
+
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+
+    <link rel="stylesheet" href="../../../js/libs/enjoyhint/enjoyhint.css">
+
+    <link rel="stylesheet" href="../../../js/libs/owl.carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../../js/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.9.4/adyen.css"
+        integrity="sha384-6qrXvoxlnBlrflZQ9g5Yf5oZapUSSXctPxacP9oRcEukbEO7lXisuSyMKG8pDX8V" crossorigin="anonymous">
+
+
+</head>
+
+<body ng-cloak>
+
+    <!-- Component TOASTER -->
+    <toaster-container toaster-options="{'time-out':3000, 'close-button': true}"></toaster-container>
+
+    <!-- APP / DESKTOP HTML -->
+    <div id="menu-wrapper" class="total-height" ng-controller="TotvsDesktopController as desktop">
+
+        <!-- HEADER -->
+        <div class="non-printable" ng-include="'js/totvs-desktop/totvs-desktop-header.view.html'">
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading-screen" class="overlay" ng-if="desktop.hasPendingRequests()">
+            <img src="assets/img/loading.gif">
+            <p class="text-center text-muted">{{'loading' | i18n}}</p>
+        </div>
+
+        <!-- MAIN DIV -->
+        <div id="menu-contents">
+            <div class="total-height">
+
+                <!-- PAGE -->
+                <div class="row no-gutter total-height" id="menu-desktop">
+
+                    <!-- MENU LATERAL -->
+                    <div class="non-printable" ng-include="'js/totvs-desktop/totvs-desktop-menu.view.html'">
+                    </div>
+
+                    <div class="total-height" id="menu-workspace">
+                        <!-- CONTEÚDO DA PÁGINA -->
+                        <div class="menu-content" id="menu-content">
+                            <div id="menu-view" ui-view></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="../../../js/libs/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="../../../js/libs/angular-custom/angular.min.js"></script>
+
+    <!-- Script que verifica se está sendo usado um dispositivo móvel -->
+    <script src="js/browser-detect.js"></script>
+
+    <script src="../../../js/libs/telerik.kendoui/js/kendo.all.min.js"></script>
+    <script src="../../../js/libs/telerik.kendoui/js/cultures/kendo.culture.pt.min.js"></script>
+    <script src="../../../js/libs/telerik.kendoui/js/cultures/kendo.culture.pt-BR.min.js"></script>
+    <script src="../../../js/libs/telerik.kendoui/js/cultures/kendo.culture.en.min.js"></script>
+    <script src="../../../js/libs/telerik.kendoui/js/cultures/kendo.culture.es.min.js"></script>
+
+    <script src="../../../js/libs/autonumeric/autoNumeric-min.js"></script>
+    <script src="../../../js/libs/lightbox2/dist/js/lightbox.min.js"></script>
+
+
+    <script src="../../../js/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="../../../js/libs/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="../../../js/libs/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    <!-- Script de configuração global(CONSTANTES) -->
+    <script src="../../../js/totvs-app.global.config.js"></script>
+
+    <!-- Script de configuração global(CONSTANTES) para o Edu-Portal Educacional -->
+    <script src="js/edu-contantes.global.config.js"></script>
+
+    <!-- Script que verifica qual arquivo de CSS deverá ser carregado -->
+    <script src="js/util-custom.js"></script>
+
+    <script src="../../../js/libs/enjoyhint/enjoyhint.min.js"></script>
+    <script src="../../../js/libs/kineticjs/kinetic.min.js"></script>
+
+    <script src="../../../js/libs/owl.carousel/owl.carousel.js"></script>
+
+    <!-- CyberSource -->
+    <script src="../../../js/libs/cybersource/flex-sdk-web.js"></script>
+    <script src="../../../js/libs/cybersource/fp-clientlib-v3.js"></script>
+
+    <!-- CyberSource - Cardinal -->
+    <script src="https://songbird.cardinalcommerce.com/cardinalcruise/v1/songbird.js"></script>
+
+    <!-- Adyen -->
+    <script src="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/3.9.4/adyen.js"
+        integrity="sha384-/rpftrZptnl7EIuIvqz4PAEehQoysKXmwqUAGyH9lK3WHgcvY0lWj/S5LH7xrbf+"
+        crossorigin="anonymous"></script>
+
+    <!-- RequireJs -->
+    <script src="virtualLibrary.js"></script>
+    <script src="../../../js/libs/requirejs/require.js" data-main="js/main" type="text/javascript"></script>
+    <script src="open-menu.js" defer></script>
+
+    <script>
+        try {
+            if (EDU_CONST_GOOGLE_ANALYTICS) {
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', EDU_CONST_GOOGLE_ANALYTICS);
+            }
+        } catch (e) { }
+    </script>
+</body>
+
+</html>

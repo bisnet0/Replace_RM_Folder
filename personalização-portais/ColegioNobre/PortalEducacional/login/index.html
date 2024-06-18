@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colégio Nobre - Portal do Aluno</title>
+
+    <!-- start: Meta -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <meta charset="utf-8">
+
+    <meta name="description" content="TOTVS Portal - TOTVS Educacional">
+    <meta name="keywords" content="totvs">
+    <meta name="author" content="totvs">
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+    <!-- end: Meta -->
+    <!-- start: Favicon and Touch Icons -->
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon">
+    <!-- end: Favicon and Touch Icons -->
+    <link rel="stylesheet" href="../../../../js/libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animacao.css">
+    <link rel="stylesheet" href="../../../../js/libs/AngularJS-Toaster/toaster.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/customProviders.css">
+</head>
+
+<body ng-cloak class="align" ng-controller="EduLoginController as controller">
+
+    <!-- Component TOASTER -->
+    <toaster-container toaster-options="{'time-out':3000, 'close-button': true}"></toaster-container>
+
+    <!-- LOGIN FORM -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="modalLoginLabel">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header header-login">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="modalLoginLabel">
+                            {{ ::'l-vincular-contas' | i18n }}
+                        </h4>
+                    </div>
+                    <div class="modal-body body-login">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 login">
+                                <div class="form__field">
+                                    {{ ::'l-usuario-nao-associado' | i18n }}
+                                    <br><br>
+                                    {{ ::'l-fique-tranquilo' | i18n }}
+                                </div>
+                                <div class="form__field">
+                                    <label for="User">
+                                        <object data="assets/img/user.svg" width="26px" height="26px"
+                                            type="image/svg+xml">
+                                            <img src="assets/img/user.png" alt="user.svg" />
+                                        </object>
+                                        <span class="hidden">{{ ::'l-usuario' | i18n }}</span>
+                                    </label>
+                                    <input id="User2" ng-model="user" type="text" tabindex="5" name="User"
+                                        class="form__input" placeholder="{{ ::'l-usuario' | i18n }}" required>
+                                </div>
+                                <div class="form__field">
+                                    <label for="Pass">
+                                        <object data="assets/img/senha.svg" width="26px" height="26px"
+                                            type="image/svg+xml">
+                                            <img src="assets/img/senha.png" alt="senha.svg" />
+                                        </object>
+                                        <span class="hidden">{{ ::'l-senha' | i18n }}</span>
+                                    </label>
+                                    <input id="Pass2" ng-model="pass" type="password" tabindex="6" name="Pass"
+                                        class="form__input" placeholder="{{ ::'l-senha' | i18n }}" required>
+                                </div>
+                                <div class="form__field"
+                                    ng-if="controller.exibirAlias && !controller.exibirFormAlterarSenha">
+                                    <label for="Alias">
+                                        <object data="assets/img/alias.svg" width="26px" height="26px"
+                                            type="image/svg+xml">
+                                            <img src="assets/img/alias.png" alt="alias.svg" />
+                                        </object>
+                                        <span class="hidden">{{ ::'l-alias' | i18n }}</span>
+                                    </label>
+                                    <select id="Alias2" name="Alias" tabindex="7" class="form__input selection"
+                                        ng-change="controller.aliasSelectChanged()" required
+                                        ng-options="alias as alias for alias in controller.listaAlias track by alias"
+                                        ng-model="controller.alias">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="modal-footer login">
+                        <input type="button" ng-click="controller.onClickAssociarContas()" tabindex="8"
+                            value="{{ ::'l-associar-contas' | i18n }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading-screen" class="overlay" ng-if="pendingRequests > 0">
+            <img src="../assets/img/loading.gif">
+            <p class="text-center text-muted">{{ ::'loading' | i18n }}</p>
+        </div>
+        <div class="logo hidden-box">
+            <img src="assets/img/logo-responsivo.png" alt="marca">
+        </div>
+        <div class="login-box hidden-box">
+            <div class="box-header">
+                <h1>{{ ::'l-portal-aluno' | i18n }}</h1>
+            </div>
+            <form name="controller.formLogin" method="POST" class="form login"
+                ng-attr-action="{{controller.urlLoginPost}}"
+                ng-show="!controller.exibirFormEsqueceuSenha && !controller.exibirFormNovaSenha && !controller.exibirFormAlterarSenha"
+                ng-submit="(submitted=true) && controller.formLogin.$invalid && $event.preventDefault()">
+                <div class="form__field">
+                    <label for="User">
+                        <object data="assets/img/user.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/user.png" alt="user.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-usuario' | i18n }}</span>
+                    </label>
+                    <input id="User" ng-model="user" type="text" tabindex="1" name="User" class="form__input"
+                        placeholder="{{ ::'l-usuario' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <label for="Pass">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha' | i18n }}</span>
+                    </label>
+                    <input id="Pass" ng-model="pass" type="password" tabindex="2" name="Pass" class="form__input"
+                        placeholder="{{ ::'l-senha' | i18n }}" required>
+                </div>
+                <div class="form__field" ng-show="controller.exibirAlias">
+                    <label for="Alias">
+                        <object data="assets/img/alias.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/alias.png" alt="alias.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-alias' | i18n }}</span>
+                    </label>
+                    <select id="Alias" name="Alias" tabindex="3" class="form__input selection"
+                        ng-change="controller.aliasSelectChanged()" required
+                        ng-options="alias as alias for alias in controller.listaAlias track by alias"
+                        ng-model="controller.alias">
+                    </select>
+                </div>
+
+                <div class="form__field">
+                    <input type="submit" ng-class="!controller.urlLoginPost ? 'button-disabled': ''"
+                        ng-disabled="!controller.urlLoginPost" ng-click="controller.validarDadosLogin()" tabindex="4"
+                        value="{{ ::'l-acessar' | i18n }}">
+                </div>
+                <div ng-if="controller.oauthProviders.length > 0">
+                    <p style="color: white">{{ ::'l-ou-acesse-via-external' | i18n }}</p>
+                    <p ng-repeat="provider in controller.oauthProviders">
+                        <span ng-if="provider.Type !== 1">
+                            <!--Botão com customização sem background-->
+                            <span class="custom-button" ng-click="externalLogin(provider.Id)"
+                                ng-style="{{provider._styleStr}}"
+                                ng-if="!isNullOrUndefined(provider.CustomizeEntity) && (isNumeral(provider.CustomizeEntity.ImageInBackGround) && provider.CustomizeEntity.ImageInBackGround == 0) || provider.CustomizeEntity.ImageInBackGround == false">
+                                <span class="custom-button-wrapper"
+                                    ng-if="(isNumeric(provider.CustomizeEntity.TextBeforeImage) && provider.CustomizeEntity.TextBeforeImage == 1) || provider.CustomizeEntity.TextBeforeImage == true">
+                                    <span class="custom-button-text"
+                                        ng-if="isNullOrWhiteSpace(provider.CustomizeEntity.Text) && isNullOrWhiteSpace(provider.ImageBase64)">{{provider.ProviderName}}</span>
+                                    <span class="custom-button-text"
+                                        ng-if="!isNullOrWhiteSpace(provider.CustomizeEntity.Text)">{{provider.CustomizeEntity.Text}}</span>
+                                    <span class="custom-button-icon" ng-if="!isNullOrWhiteSpace(provider.ImageBase64)">
+                                        <img ng-src="data:image/png;base64,{{provider.ImageBase64}}" />
+                                    </span>
+                                </span>
+                                <span class="custom-button-wrapper"
+                                    ng-if="(isNumeric(provider.CustomizeEntity.TextBeforeImage) && provider.CustomizeEntity.TextBeforeImage == 0) || provider.CustomizeEntity.TextBeforeImage == false">
+                                    <span class="custom-button-icon" ng-if="!isNullOrWhiteSpace(provider.ImageBase64)">
+                                        <img ng-src="data:image/png;base64,{{provider.ImageBase64}}" />
+                                    </span>
+                                    <span class="custom-button-text"
+                                        ng-if="isNullOrWhiteSpace(provider.CustomizeEntity.Text) && isNullOrWhiteSpace(provider.ImageBase64)">{{provider.ProviderName}}</span>
+                                    <span class="custom-button-text"
+                                        ng-if="!isNullOrWhiteSpace(provider.CustomizeEntity.Text)">{{provider.CustomizeEntity.Text}}</span>
+                                </span>
+                            </span>
+                            <!--Botão com customização com background-->
+                            <span class="custom-button" ng-click="externalLogin(provider.Id)"
+                                ng-style="{{provider._styleStr}}"
+                                ng-if="!isNullOrUndefined(provider.CustomizeEntity) && (isNumeral(provider.CustomizeEntity.ImageInBackGround) && provider.CustomizeEntity.ImageInBackGround == 1) || provider.CustomizeEntity.ImageInBackGround == true">
+                            </span>
+                            <!--Botão sem customização-->
+                            <span class="custom-button" ng-click="externalLogin(provider.Id)"
+                                ng-style="{{provider._styleStr}}" ng-if="isNullOrUndefined(provider.CustomizeEntity) ">
+                                <span class="custom-button-wrapper">
+                                    <span class="custom-button-icon" ng-if="!isNullOrWhiteSpace(provider.ImageBase64)">
+                                        <img ng-src="data:image/png;base64,{{provider.ImageBase64}}" />
+                                    </span>
+                                    <span class="custom-button-text">{{provider.ProviderName}}</span>
+                                </span>
+                            </span>
+                        </span>
+                        <span ng-if="provider.Type === 1">
+                            <!--Facebook-->
+                            <fb:login-button scope="public_profile,email" onlogin="efetuarLoginComFacebookCallback();"
+                                max-rows="1" size="large" button-type="login_with" show-faces="false"
+                                auto-logout-link="false" use-continue-as="true">
+                                {{ ::'l-botao-acesse-facebook' | i18n }}
+                            </fb:login-button>
+                        </span>
+                    </p>
+                </div>
+                <p class="small">
+                    <a href="#" ng-class="!controller.urlLoginPost ? 'hidden-box': ''"
+                        ng-click="controller.exibirEsqueceuSenha(true)" tabindex="5">{{ ::'l-esqueceu-senha' | i18n
+                        }}</a>
+                </p>
+            </form>
+            <div class="box-title" ng-if="controller.exibirFormEsqueceuSenha">
+                <h2>{{ ::'l-esqueceu-senha' | i18n }}</h2>
+            </div>
+            <form name="controller.formRecover" class="form login" ng-if="controller.exibirFormEsqueceuSenha">
+                <div class="form__field">
+                    <label for="UserRecover">
+                        <object data="assets/img/user.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/user.png" alt="user.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-usuario' | i18n }}</span>
+                    </label>
+                    <input id="UserRecover" ng-model="controller.userRecover" type="text" tabindex="1"
+                        name="UserRecover" class="form__input" placeholder="{{ ::'l-usuario' | i18n }}" required>
+                </div>
+
+                <div class="form__field">
+                    <label for="Email">
+                        <object data="assets/img/email.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/email.png" alt="email.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-email' | i18n }}</span>
+                    </label>
+                    <input id="Email" ng-model="controller.emailRecover" type="email" tabindex="1" name="Email"
+                        class="form__input" placeholder="{{ ::'l-email' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <input type="submit" ng-click="controller.registrarEsqueciSenha()" tabindex="4"
+                        value="{{ ::'l-continuar' | i18n }}">
+                </div>
+                <p class="small">
+                    <a href="#" ng-click="controller.exibirEsqueceuSenha(false)">
+                        {{
+                        ::'l-voltar-realizar-login' | i18n
+                        }}
+                    </a>
+                </p>
+            </form>
+            <form name="controller.formNewPassword" class="form login" ng-if="controller.exibirFormNovaSenha">
+                <div class="form__field">
+                    <label for="PassRecover">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha1' | i18n }}</span>
+                    </label>
+                    <input id="PassRecover" ng-model="controller.novaSenha" type="password" tabindex="2"
+                        name="PassRecover" class="form__input" placeholder="{{ ::'l-senha1' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <label for="PassRecover2">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha2' | i18n }}</span>
+                    </label>
+                    <input id="PassRecover2" ng-model="controller.novaSenha2" type="password" tabindex="2"
+                        name="PassRecover2" class="form__input" placeholder="{{ ::'l-senha2' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <input type="submit" ng-click="controller.registrarNovaSenha()" tabindex="4"
+                        value="{{ ::'l-continuar' | i18n }}">
+                </div>
+            </form>
+            <form name="controller.formAlterarSenha" class="form login" ng-if="controller.exibirFormAlterarSenha">
+                <div class="form__field">
+                    <label for="usuario">
+                        <object data="assets/img/user.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/user.png" alt="user.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-usuario' | i18n }}</span>
+                    </label>
+                    <input id="usuario" ng-model="controller.usuario" type="text" tabindex="1" name="usuario"
+                        class="form__input" placeholder="{{ ::'l-usuario' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <label for="OldPass">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha-antiga' | i18n }}</span>
+                    </label>
+                    <input id="OldPass" ng-model="controller.antigaSenha" type="password" tabindex="2" name="OldPass"
+                        class="form__input" placeholder="{{ ::'l-senha-antiga' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <label for="PassRecover">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha1' | i18n }}</span>
+                    </label>
+                    <input id="PassRecover" ng-model="controller.novaSenha" type="password" tabindex="3"
+                        name="PassRecover" class="form__input" placeholder="{{ ::'l-senha1' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <label for="PassRecover2">
+                        <object data="assets/img/senha.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/senha.png" alt="senha.svg" />
+                        </object>
+                        <span class="hidden">{{ ::'l-senha2' | i18n }}</span>
+                    </label>
+                    <input id="PassRecover2" ng-model="controller.novaSenha2" type="password" tabindex="4"
+                        name="PassRecover2" class="form__input" placeholder="{{ ::'l-senha2' | i18n }}" required>
+                </div>
+                <div class="form__field">
+                    <input type="submit" ng-click="controller.alterarSenha()" tabindex="5"
+                        value="{{ ::'btn-save' | i18n }}">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalMobileDetect" tabindex="-1" role="dialog"
+        aria-labelledby="mInfoLabelmodalDisciplinas">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="mInfoLabelModalDownloadMateriais">
+                        {{ ::'l-dispositivo-mobile' | i18n }}
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="panel-body">
+                        <p>{{ ::'l-msg-mobile-1' | i18n }}</p>
+                        <p>{{ ::'l-msg-mobile-2' | i18n }}</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-acessar-mobile" data-backdrop="false"
+                        ng-click="controller.redirecionarMobile()">
+                        <span>
+                            {{ :: 'l-btn-acessar-versao-mobile' | i18n }}
+                        </span>
+                        <object data="assets/img/mobile.svg" width="26px" height="26px" type="image/svg+xml">
+                            <img src="assets/img/mobile.png" alt="mobile.svg" />
+                        </object>
+                    </button>
+                    <button type="button" class="btn btn-continuar-site" data-dismiss="modal" data-backdrop="false">
+                        {{ ::'l-btn-continuar-portal' | i18n }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://connect.facebook.net/pt_BR/sdk.js"></script>
+    <script src="../../../../js/libs/jquery-3.6.0/dist/jquery.min.js"></script>
+    <script src="../../../../js/libs/angular-custom/angular.min.js"></script>
+    <script src="../../../../js/libs/angular-ui-select/dist/select.min.js"></script>
+    <script src="../../../../js/libs/angular-resource/angular-resource.js"></script>
+    <script src="../../../../js/libs/angular-i18n/angular-locale_pt-br.js"></script>
+    <script src="../../../../js/libs/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../../../../js/libs/angular-animate/angular-animate.js"></script>
+    <script src="../../../../js/libs/angular-scroll/angular-scroll.min.js"></script>
+    <script src="../../../../js/libs/angular-nestable/src/angular-nestable.js"></script>
+
+    <script src="../../../../js/libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../../../../js/libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../../../../js/libs/AngularJS-Toaster/toaster.js"></script>
+    <script src="../../../../js/libs/mobile-detect/mobile-detect.min.js"></script>
+
+    <script src="../../../../js/libs/angular-hotkeys/build/hotkeys.js"></script>
+
+    <script src="../../../../js/libs/ngMask/dist/ngMask.min.js"></script>
+
+    <script src="../../../../js/libs/telerik.kendoui/js/kendo.all.min.js"></script>
+    <script src="../../../../js/libs/totvs-html-framework/totvs-html-framework.min.js"></script>
+
+    <!-- Script de configuração global(CONSTANTES) -->
+    <script src="../../../../js/totvs-app.global.config.js"></script>
+
+    <!-- Script de configuração global(CONSTANTES) para o Edu-Portal Educacional -->
+    <script src="../js/edu-contantes.global.config.js"></script>
+
+    <!-- OpenID Connect Client -->
+    <script src="../../../../js/libs/oidc-client/dist/oidc-client.min.js" data-main="js/main"
+        type="text/javascript"></script>
+
+    <!-- Script de Controller Login -->
+    <script src="login.controller.js"></script>
+</body>
+
+</html>

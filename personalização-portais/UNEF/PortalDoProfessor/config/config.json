@@ -1,0 +1,14 @@
+{
+  "apiServer": "https://gnunef.ddns.com.br/FrameHTML/Web/App/Edu/PortalDoProfessor",
+  "basePath": "/FrameHTML/Web/App/Edu/PortalDoProfessor",
+  "defaultAlias": "unef2",
+  "urlCorpore": "https://gnunef.ddns.com.br/Corpore.Net",
+  "multitenant": false,
+  "subDomainMask": "[ALIAS].S0201-017",
+  "name": "UNEF - Portal do Professor",
+  "imgBannersLogin": [
+    {
+      "name": "banner01.jpg"
+    }
+  ]
+}

@@ -1,0 +1,248 @@
+/*!
+* Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
+* Copyright 2013-2016 Start Bootstrap
+* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+*/
+
+body {
+    overflow-x: hidden;
+}
+
+/* Toggle Styles */
+#menu-desktop {
+    padding: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#menu-desktop #menu-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 98;
+    animation: opac 0.8s;
+    display: none;
+}
+
+#menu-desktop #menu-lateral {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    min-height: 100%;
+    height: auto;
+    overflow-y: hidden;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+#menu-desktop .menu-block {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+#menu-content {
+    height: 100%;
+}
+
+#menu-structure {
+    height: 100%;
+}
+
+#menu-structure .menu-group {
+    padding: 14px 0 10px 15px;
+    border-bottom: 1px solid #F47016;
+    background: #353B48;
+    color: white;
+
+}
+
+#menu-modules ul li.menu-item span span::before {
+    vertical-align: middle;
+}
+
+#menu-structure .menu-item {
+    height: auto;
+    padding: 10px 0 14px 15px !important;
+    cursor: pointer;
+    background: #353B48;
+    color: white;
+}
+
+#menu-structure .list-unstyled.ng-scope {
+    border-bottom: 1px solid #17a8bb;
+    border-bottom: 1px solid #F47016;
+    background: #353B48;
+    color: white;
+}
+
+.list-unstyled li span.ico-chevron-down {
+    font-size: 1.3rem;
+    margin-left: 5px;
+}
+
+.menu-group span span.ico-pin {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+.list-unstyled li .menu-item-text span.ico-chevron-down,
+span.ico-chevron-up {
+    font-size: 1.3rem;
+    margin: 5px 10px 0 0;
+    float: right;
+}
+
+#menu-structure .menu-item:hover {
+    background: #F47016;
+}
+
+#menu-structure .menu-item:active {
+    background: #F47016;
+}
+
+#menu-structure .menu-item.active,
+#menu-structure .submenu-item menu-item.active {
+    background: #F47016;
+    color: inherit;
+    font-weight: normal;
+}
+
+#menu-structure .menu-item span img {
+    padding-right: 10px;
+    background: #F47016;
+}
+
+#menu-structure .submenu-item {
+    margin-left: 20px;
+    margin-top: 11px;
+    font-size: 1.4rem;
+}
+
+#menu-desktop.toggled #sidebar-min {
+    display: none;
+}
+
+#menu-desktop.toggled #menu-overlay,
+#menu-desktop.toggled #menu-lateral {
+    display: block;
+}
+
+#menu-desktop.fixed-menu #menu-overlay,
+#menu-desktop.fixed-menu #sidebar-min {
+    display: none;
+}
+
+#menu-desktop.fixed-menu {
+    padding-left: 250px;
+}
+
+#menu-desktop.fixed-menu #menu-lateral {
+    display: block;
+    left: 250px;
+    margin-left: -250px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#menu-workspace {
+    position: relative;
+    margin-left: 60px;
+}
+
+#menu-desktop.fixed-menu #menu-workspace {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    padding-right: 5px;
+}
+
+#menu-applications {
+    height: 100%;
+}
+
+.menu-item-text label {
+    cursor: pointer;
+    font-weight: normal;
+    margin-left: 10px;
+    font-size: 1.4rem;
+}
+
+.list-unstyled {
+    min-height: 100%;
+    background-color: inherit;
+}
+
+/* Add this CSS rule to apply the hover effect to nested menu items */
+#menu-structure .menu-item:hover,
+#menu-structure .menu-item:hover .submenu-item .menu-item {
+    background: #F47016;
+}
+
+/* Add this CSS rule to apply the active state to nested menu items */
+#menu-structure .menu-item.active,
+#menu-structure .submenu-item .menu-item.active {
+    color: inherit;
+    font-weight: normal;
+    background: #F47016;
+}
+
+/* Elements sidebar */
+#sidebar-min {
+    display: block;
+    z-index: 99;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65px;
+    background-color: #e0e5eA;
+    text-align: left;
+    color: #4d4d4d;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-min ul li {
+    cursor: pointer;
+    padding: 14px 0 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #F47016;
+    background: #353B48;
+    color: white;
+}
+
+#sidebar-min ul li:hover {
+    background: #F47016;
+}
+
+#sidebar-min ul li.active {
+    background-color: #F47016;
+}
+
+@media screen and (max-width: 1320px) {
+
+    #menu-structure .menu-group {
+        border-bottom: 1px solid #F47016;
+        background: #353B48;
+        color: white;
+
+    }
+}
