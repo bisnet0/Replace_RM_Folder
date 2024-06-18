@@ -64,7 +64,8 @@ def substituir_varias_pastas(lista_caminhos):
             substituir_pasta(caminho_origem, caminho_destino)
 
 def menu_interativo():
-    escolha = input(('''
+    while True:
+        escolha = input(('''
  ██████╗ ██████╗ ██╗   ██╗██████╗  ██████╗     ███╗   ██╗ ██████╗ ██████╗ ██████╗ ███████╗
 ██╔════╝ ██╔══██╗██║   ██║██╔══██╗██╔═══██╗    ████╗  ██║██╔═══██╗██╔══██╗██╔══██╗██╔════╝
 ██║  ███╗██████╔╝██║   ██║██████╔╝██║   ██║    ██╔██╗ ██║██║   ██║██████╔╝██████╔╝█████╗  
@@ -78,36 +79,37 @@ def menu_interativo():
     "3— Personalizar o Colégio Nobre  | \n"
     "---------------------------------\n"))
     
-    if escolha == '1':
-        # Defina os caminhos para personalizar a UNIFAN
-        lista_caminhos = [
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
-        ]
-        substituir_varias_pastas(lista_caminhos)
-    elif escolha == '2':
-        # Defina os caminhos para personalizar a UNEF
-        lista_caminhos = [
-            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
-            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
-            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
-            (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
-        ]
-        substituir_varias_pastas(lista_caminhos)
-    elif escolha == '3':
-        # Defina os caminhos para personalizar o Colégio Nobre
-        lista_caminhos = [
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortaldoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
-            (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalGestãoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
-        ]
-        substituir_varias_pastas(lista_caminhos)
-    else:
-        print("Escolha inválida. Digite 1, 2 ou 3.")
-        menu_interativo()
+        if escolha == '1':
+            # Defina os caminhos para personalizar a UNIFAN
+            lista_caminhos = [
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
+            ]
+            substituir_varias_pastas(lista_caminhos)
+        elif escolha == '2':
+            # Defina os caminhos para personalizar a UNEF
+            lista_caminhos = [
+                (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+                (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+                (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+                (r'C:\Users\administrador.UNEF\Downloads\Replace_RM_Folder-main\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
+            ]
+            substituir_varias_pastas(lista_caminhos)
+        elif escolha == '3':
+            # Defina os caminhos para personalizar o Colégio Nobre
+            lista_caminhos = [
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\Corpore.net', r'C:\totvs\CorporeRM\Corpore.Net'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortaldoProfessor', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
+                (r'C:\Users\Administrador\Downloads\Replace_RM_Folder-main\personalização-portais\ColegioNobre\PortalGestãoEducacional', r'C:\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional')
+            ]
+            substituir_varias_pastas(lista_caminhos)
+        elif escolha.lower() == 'sair':
+            break
+        else:
+            print("Escolha inválida. Digite 1, 2 ou 3 para personalizar ou 'sair' para encerrar o programa.")
 
 # Chamada do menu interativo
 menu_interativo()
