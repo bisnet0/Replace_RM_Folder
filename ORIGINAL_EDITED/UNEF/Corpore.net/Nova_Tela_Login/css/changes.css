@@ -1,0 +1,27 @@
+:root{
+	--main: #ff7b00;
+	--mainDeep: #d96900;
+	--mainDeeper: #ba5b02;
+}
+
+.form-control, .login-label-complemento, .esqueceu-a-senha{
+	color: var(--main);
+}
+
+.login-text:focus{
+	box-shadow: 0 0 1px 1px var(--main);
+	border: none;
+}
+
+.login-button{
+	background-color: var(--mainDeep);
+	border: none;
+}
+
+.login-button:hover{
+	background-color: var(--mainDeeper);
+}
+
+.style1 .LoginAnnonServiceCaption{
+	color: var(--main);
+}

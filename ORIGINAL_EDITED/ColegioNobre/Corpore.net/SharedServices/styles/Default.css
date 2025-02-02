@@ -1,0 +1,116 @@
+#generatorBody {
+	/* background: url('../../images/bg-fan.png'); */
+	background: url('./bg-colegio.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+#logoUNEF {
+	width: 20vh;
+	margin-bottom: 20px;
+	margin-top: 40px
+}
+
+#frmMain {
+	box-sizing: border-box;
+	width: 20vw;
+	height: 50vh;
+	background-color: #FFFFFF80;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 4px;
+	padding-inline: 1%;
+}
+
+#formDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#formDiv h3 {
+	text-align: center;
+	font-size: 2.2vh;
+	margin: 0;
+}
+
+#inputDiv {
+	margin-top: 5vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#inputDiv span {
+	text-align: center;
+	font-size: 2.1vh;
+}
+
+#inputDiv input[type="text"] {
+	font-size: 2.1vh;
+	max-width: 18vw;
+}
+
+#inputDiv input[type="text"]:focus {
+	outline: none;
+}
+
+#btnBuscar {
+	font-size: 2.1vh;
+	margin-top: 2%;
+	cursor: pointer;
+	background-color: #286090;
+	border: 1px solid #000;
+	border-radius: 4px;
+	transition: ease .3s;
+}
+
+#btnBuscar:hover {
+	background-color: #165180;
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+	#frmMain {
+		height: 60vh;
+		width: 40vw;
+	}
+
+}
+
+@media (max-width: 767px) {
+	#generatorBody {
+		background: red !important;
+	}
+
+	#frmMain {
+		height: 60vh;
+		width: 80vw;
+		background-color: #ffffff90;
+	}
+
+	#formDiv h3 {
+		font-size: 1.6rem;
+	}
+
+	#lblGuid {
+		font-size: 1.5rem !important;
+		border-radius: 4px;
+	}
+
+	#inputDiv input[type="text"] {
+		font-size: 2.1vh;
+		max-width: 80vw;
+		width: 80vw;
+	}
+}
+
+@media (max-width: 1300px) {
+	#inputDiv input[type="text"] {
+		margin: 0px auto;
+		max-width: none;
+		margin-bottom: 10px;
+	}
+
+}

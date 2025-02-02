@@ -1,0 +1,24 @@
+.custom-button {
+    display: block;
+    margin: 0.875em;
+    text-align: center;
+    padding: 0.600em;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 1;
+}
+
+.custom-button:hover {
+    opacity: 0.8;
+}
+    
+.custom-button-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-button-wrapper span {
+    padding: 5px;
+    display: inline-flex;
+}

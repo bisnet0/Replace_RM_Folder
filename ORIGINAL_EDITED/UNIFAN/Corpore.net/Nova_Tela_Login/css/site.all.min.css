@@ -1,0 +1,604 @@
+:root {
+    --primary-light-80: #ceeaf2;
+    --primary: #0c9abe;
+    --primary-dark-20: #097b98;
+    --primary-dark-40: #075c72;
+    --secondary: #0d729c;
+    --secondary-dark-60: #052d3e;
+    --tertiary: #29b6c5;
+    --white: #fff;
+    --neutral-light-98: #fbfbfb;
+    --neutral-light-90: #eceeee;
+    --neutral-light-80: #dadedf;
+    --neutral-light-60: #b6bdbf;
+    --neutral-light-40: #9da7a9;
+    --neutral: #4a5c60;
+    --neutral-dark-40: #2c3739;
+    --neutral-dark-60: #1d2426;
+    --black: #000;
+    --success: #00b28e;
+    --warning: #ea9b3e;
+    --danger: #c64840;
+    --primary-light-95: #f3fafc;
+    --black-10: rgba(0, 0, 0, .1)
+}
+
+@font-face {
+    font-family: "NunitoSans";
+    src: url(../fonts/NunitoSans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "NunitoSans-Bold";
+    src: url(../fonts/NunitoSans-Bold.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "NunitoSans-ExtraLight";
+    src: url(../fonts/NunitoSans-ExtraLight.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+body,
+input,
+label,
+h1,
+h2,
+h3,
+button,
+strong {
+    font-family: "NunitoSans";
+    font-style: normal
+}
+
+body {
+    background-color: #fbfbfb;
+    background-color: var(--neutral-light-98)
+}
+
+label {
+    margin-bottom: 0
+}
+
+.grey {
+    height: 34px;
+    object-fit: contain
+}
+
+.blue {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    background-color: var(--white)
+}
+
+.red {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    background-color: var(--danger)
+}
+
+input.input-validation-error {
+    border: 1px solid #cd0a0a
+}
+
+.div-manage-box {
+    margin-top: 10px
+}
+
+.link {
+    width: 100%;
+    height: 24px;
+    font-family: "NunitoSans-Bold";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.71;
+    text-align: center;
+    color: #0c9abe;
+    color: var(--primary)
+}
+
+body {
+    text-align: center;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px)
+}
+
+.login-page {
+    width: 100%;
+    margin: auto;
+    margin-left: 5px
+}
+
+.login-header {
+    margin-top: 16px;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.login-logo {
+    width: 156px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.login-label-produto {
+    display: block;
+    font-family: NunitoSans-ExtraLight;
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 200;
+    color: #435357
+}
+
+.login-label-complemento {
+    display: block;
+    font-family: NunitoSans;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #29b6c5
+}
+
+.login-body-main {
+    margin: auto;
+    width: 100%;
+    max-width: 419px
+}
+
+.login-body-social-main {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: auto;
+    width: 100%;
+    max-width: 419px
+}
+
+.login-text {
+    display: inline;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--white);
+    box-shadow: inset 0 1px 8px 0 var(--black-10);
+    border: solid 1px var(--neutral-light-60)
+}
+
+.div-item {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.login-button {
+    width: 100%;
+    height: 44px;
+    font-family: "NunitoSans-Bold";
+    font-size: 16px;
+    border-radius: 3px;
+    border-color: #0c9abe;
+    background-color: #0c9abe;
+    background-color: var(--primary);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .15);
+    margin-bottom: 10px
+}
+
+.login-tenant {
+    background: url(../svg/user_blue.svg) no-repeat scroll 7px;
+    padding-left: 40px;
+    max-width: 419px;
+    margin-bottom: 10px
+}
+
+.login-user {
+    background: url(../svg/user_blue.svg) no-repeat scroll 7px;
+    padding-left: 40px;
+    max-width: 419px;
+    margin-bottom: 10px
+}
+
+.login-password {
+    background: url(../svg/lock_blue.svg) no-repeat scroll 7px;
+    padding-left: 40px;
+    max-width: 419px;
+    margin-bottom: 10px
+}
+
+.login-arroba {
+    background: url(../svg/arroba_blue.png) no-repeat scroll 7px;
+    padding-left: 40px;
+    max-width: 419px;
+    margin-bottom: 10px
+}
+
+.login-alias {
+    background: url(../svg/alias_blue.png) no-repeat scroll 7px;
+    padding-left: 40px;
+    max-width: 419px;
+    margin-bottom: 10px
+}
+
+.tenant-text {
+    font-size: 20px;
+    color: #435357;
+    margin-bottom: 25px
+}
+
+.login-body {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 35px
+}
+
+.login-remember {
+    width: 100%;
+    height: 44px;
+    text-align: right;
+    margin-bottom: 16px;
+    padding-right: 20px
+}
+
+.login-remember label {
+    font-family: "NunitoSans";
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: left;
+    color: var(--neutral)
+}
+
+.login-footer {
+    position: relative;
+    height: auto;
+    margin-bottom: 10px
+}
+
+.login-footer-version {
+    position: fixed;
+    bottom: 0;
+    height: auto;
+    font-family: "NunitoSans-ExtraLight";
+    font-size: 11px;
+    color: #d0d0d0;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 5px
+}
+
+@media only screen and (max-width:419px) {
+    .login-header label {
+        font-size: 7vw;
+        line-height: normal
+    }
+}
+
+@media only screen and (min-height:736px) {
+    .login-logo {
+        margin-bottom: 50px
+    }
+
+    .login-header {
+        margin-bottom: 30px
+    }
+}
+
+@media only screen and (max-width:320px) and (max-height:568px) {
+    .login-body {
+        margin-bottom: 0
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    margin-left: 29px
+}
+
+.switch input {
+    display: none
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    margin-top: 9px;
+    margin-bottom: -9px
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background: url(../svg/x_gray.svg) no-repeat scroll 0;
+    background-size: 19px 19px;
+    background-color: #fff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s
+}
+
+input:checked+.slider {
+    background-color: #0c9abe
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #0c9abe
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: url(../svg/check_blue.svg) no-repeat scroll 0;
+    background-size: 19px 19px;
+    background-color: #fff
+}
+
+.slider.round {
+    border-radius: 34px
+}
+
+.slider.round:before {
+    border-radius: 50%
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto.ttf);
+    font-weight: 400;
+    font-style: normal
+}
+
+* {
+    box-sizing: border-box
+}
+
+.social-list-item {
+    direction: ltr;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    text-align: left
+}
+
+.social-idp-list>.social-list-item {
+    margin-bottom: 15px;
+    text-align: center
+}
+
+.mdl-button,
+.mdl-button .material-icons {
+    vertical-align: middle
+}
+
+.mdl-button {
+    border-style: none;
+    border-color: initial;
+    border-width: initial;
+    margin: 0;
+    padding: 0 16px;
+    background-position: 0 0;
+    background-image: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    color: #000;
+    position: relative;
+    height: 36px;
+    min-width: 64px;
+    display: inline-block;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    will-change: box-shadow;
+    transition-duration: 0.2s, 0.2s, 0.2s;
+    transition-timing-function: cubic-bezier(.4, 0, 1, 1), cubic-bezier(.4, 0, .2, 1), cubic-bezier(.4, 0, .2, 1);
+    transition-delay: 0s, 0s, 0s;
+    transition-property: box-shadow, background-color, color;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0;
+    cursor: pointer;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    text-align: center;
+    line-height: 36px
+}
+
+.mdl-button:hover {
+    background-color: rgba(158, 158, 158, .2);
+    text-decoration: none
+}
+
+.mdl-button:focus:not(:active) {
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.mdl-button:active {
+    background-color: rgba(158, 158, 158, .4);
+    text-decoration: none
+}
+
+.mdl-button--raised {
+    background-position: initial;
+    background-image: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgba(158, 158, 158, .2);
+    box-shadow: rgba(0, 0, 0, .14) 0 2px 2px 0, rgba(0, 0, 0, .2) 0 3px 1px -2px, rgba(0, 0, 0, .12) 0 1px 5px 0
+}
+
+.mdl-button--raised:active {
+    box-shadow: rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0, rgba(0, 0, 0, .2) 0 2px 4px -1px;
+    background-color: rgba(158, 158, 158, .4)
+}
+
+.mdl-button--raised:focus:not(:active) {
+    box-shadow: rgba(0, 0, 0, .18) 0 0 8px, rgba(0, 0, 0, .36) 0 8px 16px;
+    background-color: rgba(158, 158, 158, .4)
+}
+
+.social-idp-button {
+    direction: ltr;
+    font-weight: 500;
+    height: auto;
+    line-height: normal;
+    max-width: 230px;
+    min-height: 40px;
+    padding-top: 10px;
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    text-align: left;
+    width: 100%
+}
+
+a.social-idp-button {
+    text-decoration: none
+}
+
+.social-idp-google,
+.social-idp-google:hover,
+.mdl-button.social-idp-google:active,
+.mdl-button.social-idp-google:focus {
+    background-color: #fff
+}
+
+.social-idp-icon-wrapper {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.social-idp-favicon,
+.social-idp-icon {
+    border-style: none;
+    border-color: initial;
+    border-width: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.social-idp-icon {
+    height: 20px;
+    width: 20px
+}
+
+.social-idp-text {
+    color: #fff;
+    display: table-cell;
+    font-size: 14px;
+    padding-left: 16px;
+    text-transform: none;
+    vertical-align: middle;
+    padding-top: 3px
+}
+
+.social-idp-text.social-idp-text-long {
+    display: table-cell
+}
+
+.social-idp-google>.social-idp-text {
+    color: #757575
+}
+
+.social-idp-text.social-idp-text-short {
+    display: none
+}
+
+.social-idp-list {
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    margin-top: 1em;
+    margin-right: 0;
+    margin-bottom: 1em;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0
+}
+
+.social-idp-facebook,
+.social-idp-facebook:hover,
+.mdl-button.social-idp-facebook:active,
+.mdl-button.social-idp-facebook:focus {
+    background-color: #3b5998
+}
+
+.social-idp-twitter,
+.social-idp-twitter:hover,
+.mdl-button.social-idp-twitter:active,
+.mdl-button.social-idp-twitter:focus {
+    background-color: #1da1f2
+}
+
+.social-idp-github,
+.social-idp-github:hover,
+.mdl-button.social-idp-github:active,
+.mdl-button.social-idp-github:focus {
+    background-color: #333
+}
+
+.social-idp-microsoft,
+.social-idp-microsoft:hover,
+.mdl-button.social-idp-microsoft:active,
+.mdl-button.social-idp-microsoft:focus {
+    background-color: #333
+}
+
+.social-idp-linkedin,
+.social-idp-linkedin:hover,
+.mdl-button.social-idp-linkedin:active,
+.mdl-button.social-idp-linkedin:focus {
+    background-color: #0077b5
+}

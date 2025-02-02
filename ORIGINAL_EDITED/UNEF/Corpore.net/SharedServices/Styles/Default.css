@@ -1,0 +1,200 @@
+body {
+	font-size: 8pt;
+	font-family: Arial;
+	margin: 0;
+}
+
+TABLE {
+	font-size: 8pt;
+}
+
+TABLE.DataGrid {}
+
+TABLE.DataGrid TR.Item {
+	background-color: #adccee;
+	cursor: pointer;
+	cursor: hand;
+}
+
+TABLE.DataGrid TR.AlternatingItem {
+	cursor: pointer;
+	cursor: hand;
+}
+
+TABLE.DataGrid TR.Header {
+	background-color: #5988cc;
+	font-weight: bold;
+}
+
+.Invisible {
+	display: none;
+}
+
+TABLE.DataGrid TD.SelectColumn {
+	cursor: auto;
+	width: 20px;
+}
+
+.LoginLabel {
+	font-size: 10pt;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.LoginMessage {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #de4545;
+	background-color: #FFFFFF;
+	padding: 5px;
+}
+
+.Loading {
+	font-weight: bolder;
+	font-size: 11pt;
+}
+
+INPUT {
+	font-size: 8pt;
+}
+
+INPUT.ReadOnly,
+INPUT.LookupReadOnly {
+	background-color: #EFEFEF;
+	border: solid 1px #7F9DB9;
+	color: #353535;
+}
+
+INPUT.LookupReadOnly {
+	border: none;
+}
+
+TEXTAREA.ReadOnly {
+	background-color: #EFEFEF;
+	border: solid 1px #7F9DB9;
+	color: #353535;
+}
+
+DIV {
+	scrollbar-face-color: #CFD5EE;
+	scrollbar-track-color: #E6E7F8;
+	scrollbar-arrow-color: #000F7C;
+	scrollbar-shadow-color: #B9CEF0;
+	scrollbar-dark-shadow-color: #E6E7F8;
+	scrollbar-3dlight-color: #E6E7F8;
+	scrollbar-highlight-color: #E6E7F8;
+}
+
+#generatorBody {
+	background: url('../../images/bg.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+#logoUNEF {
+	width: 14vh;
+}
+
+#frmMain {
+	box-sizing: border-box;
+	width: 20vw;
+	height: 50vh;
+	background-color: #00000050;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 4px;
+	padding-inline: 1%;
+}
+
+#formDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#formDiv h3 {
+	text-align: center;
+	font-size: 2.2vh;
+	margin: 0;
+}
+
+#inputDiv {
+	margin-top: 5vh;
+	display: flex;
+	flex-direction: column;
+}
+
+#inputDiv span {
+	text-align: center;
+	font-size: 2.1vh;
+}
+
+#inputDiv input[type="text"] {
+	font-size: 2.1vh;
+	max-width: 18vw;
+}
+
+#inputDiv input[type="text"]:focus {
+	outline: none;
+}
+
+#btnBuscar {
+	font-size: 2.1vh;
+	margin-top: 2%;
+	cursor: pointer;
+	background-color: #ff7b00;
+	border: 1px solid #000;
+	border-radius: 4px;
+	transition: ease .3s;
+}
+
+#btnBuscar:hover {
+	background-color: #d96900;
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+	#frmMain {
+		height: 60vh;
+		width: 40vw;
+	}
+}
+
+@media (max-width: 767px) {
+	#generatorBody {
+		background: red !important;
+	}
+
+	#frmMain {
+		height: 60vh;
+		width: 80vw;
+		background-color: #ffffff90;
+	}
+
+	#formDiv h3 {
+		font-size: 1.6rem;
+	}
+
+	#lblGuid {
+		font-size: 1.5rem !important;
+		border-radius: 4px;
+	}
+
+	#inputDiv input[type="text"] {
+		font-size: 2.1vh;
+		/*max-width: 80vw;*/
+		width: 80vw;
+	}
+}
+
+@media (max-width: 1300px) {
+	#inputDiv input[type="text"] {
+		margin: 0px auto;
+		max-width: none;
+		margin-bottom: 10px;
+	}
+
+}

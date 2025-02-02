@@ -1,0 +1,868 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url(//fonts.gstatic.com/s/nunitosans/v3/iJ4p9wO0GDKJ-D5teKuZqr6up8jxqWt8HVA3mDhkV_0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url(//fonts.gstatic.com/s/nunitosans/v3/iJ4p9wO0GDKJ-D5teKuZqiYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito Sans Regular'), local('NunitoSans-Regular'), url(//fonts.gstatic.com/s/nunitosans/v3/iJ4p9wO0GDKJ-D5teKuZqo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/*Cinzas*/
+/*box janela contexto*/
+/*linhas, separadores, ícones menu, */
+/*aba*/
+/*Separador topo*/
+/*Cabeçalho tabelas*/
+/*fonte 1 (corpo)*/
+/*fonte 2 (topo)*/
+/*Cores Portal*/
+/*Amarelo Totvs*/
+/*Azul 1 Totvs*/
+/*Azul Portal*/
+/*Botões, menu e atalhos*/
+/*sombra botões*/
+/*Azul Marinho Totvs*/
+/*Outras Cores*/
+/*linha de tabela alternada*/
+/*Para divisões discretas*/
+/*Para barra topo*/
+.border-padrao {
+  border: 5px solid #555;
+}
+.btn-portal {
+  color: #fff;
+  background-color: #278495;
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.btn-portal-hover {
+  color: #278495;
+  background-color: rgba(39, 132, 149, 0.15);
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+/* Reset CSS */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+* {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+a {
+  color: #066d8e;
+}
+#menu-header-items {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+.page-content .item-container .link {
+  color: #066d8e;
+  cursor: pointer;
+}
+.btn-group .btn,
+.btn,
+.btn-default {
+  color: #fff;
+  background-color: #278495;
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.btn-info,
+.btn-primary {
+  color: #fff;
+  background-color: #278495;
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.k-dropdown-wrap .k-input,
+.k-numeric-wrap .k-input,
+.k-picker-wrap .k-input {
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+}
+.btn-group .btn:hover,
+.btn-group .btn:active,
+.btn-group .btn:visited,
+.btn-group .btn:focus,
+.btn-default:hover,
+.btn-default:active,
+.btn-default:visited,
+.btn-default:focus,
+.btn-info:hover,
+.btn-info:active,
+.btn-info:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #278495;
+  background-color: rgba(39, 132, 149, 0.15);
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.btn-toolbar .btn-group .btn {
+  color: #666666 !important;
+}
+.itemFinanceiro .btn {
+  margin-right: 5px;
+}
+.modal-dialog > .modal-content > .modal-footer > .btn {
+  color: #fff;
+  background-color: #278495;
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.modal-dialog > .modal-content > .modal-footer > .btn:hover {
+  color: #278495;
+  background-color: rgba(39, 132, 149, 0.15);
+  border-color: #278495;
+  /*Border radius padrão*/
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+}
+.modal-header {
+  background-color: #278495;
+  color: #fff;
+}
+#modalArquivo > .modal-dialog > .modal-content > .modal-body > .panel > .panel-body > .row:nth-child(2) > div > .ng-isolate-scope > div > .input-group > .input-group-btn > .btn {
+  background-color: #278495;
+}
+#modalArquivo > .modal-dialog > .modal-content > .modal-body > .panel > .panel-body > .row:nth-child(2) > div > .ng-isolate-scope > div :hover {
+  color: #278495;
+  background-color: #278495;
+  border-color: #278495;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  margin-left: 0 !important;
+}
+/*Barra Status*/
+#menu-header {
+  /*Cor background barra de informações*/
+  background: #F5F7F7;
+}
+#menu-header .header-title {
+  /*Cor Nome da Unidade*/
+  color: #066d8e;
+}
+.caret {
+  border: none;
+  content: "\e931";
+  margin: -13px -13px 0;
+  color: #49afc9;
+}
+.information-menu .btn-aluno {
+  margin-right: 10px;
+}
+.btn-toolbar {
+  /*Filtro - ng-scope*/
+}
+.btn-toolbar > .btn-group > .btn-default {
+  border: 1px solid #82bfbf !important;
+  background-color: rgba(130, 191, 191, 0.46) !important;
+}
+.btn-toolbar > .btn-group > .btn-default.active {
+  border: 1px solid #278495 !important;
+  background-color: #278495 !important;
+  color: #fff !important;
+}
+.well {
+  color: #468893;
+  background-color: #e8e8e8 !important;
+}
+.panel-situacaoResultado {
+  margin: 0 5px 10px 0 !important;
+}
+.panel-info > .panel-heading {
+  background-color: rgba(37, 123, 146, 0.15);
+}
+.panel-info > .panel-body {
+  background-color: rgba(228, 228, 228, 0.5);
+}
+.panel-info > .panel-body > .list-group > .list-group-item {
+  background-color: #fff;
+}
+.k-grid-header {
+  padding-right: 0 !important;
+}
+.k-grid-header > .k-grid-header-wrap.k-auto-scrollable > table > thead > tr > th {
+  background-color: #6d7e82;
+  border-left-color: rgba(88, 111, 111, 0.46) !important;
+  color: #fff;
+}
+.k-grid-header > .k-grid-header-wrap.k-auto-scrollable > table > thead > tr > th > a,
+.k-grid-header > .k-grid-header-wrap.k-auto-scrollable > table > thead > tr > th a.k-link {
+  color: #fff;
+}
+.k-scheduler-table .k-today,
+.k-today > .k-scheduler-datecolumn,
+.k-today > .k-scheduler-groupcolumn {
+  background-color: #f4f6f7;
+  color: #666666;
+}
+#edu-widget .pull-right {
+  /*mini botões dos widgets*/
+}
+#edu-widget .pull-right > .settings > .btn,
+#edu-widget .pull-right .btn-default {
+  background-color: #278495;
+  color: #fff;
+}
+#edu-widget {
+  /*mini botões dos widgets (filhos)*/
+}
+#edu-widget > span > .widgetPageContent > div > .dashboard-on-drag > .widget-panel > .dashboard-portlet-header-config > .row > div > span > .pull-right-widget > .btn,
+#edu-widget > span > .widgetPageContent > div > .dashboard-on-drag > .widget-panel > .dashboard-portlet-header-config > .row > div > span > .pull-right-widget .btn-default {
+  background-color: #278495;
+  color: #fff;
+}
+/*widgets Seja Bem Vindo e bordas dos widgets*/
+#edu-widget .widget-panel > .panel-heading {
+  border-top: 1px solid #278495 !important;
+  border-left: 9px solid #278495;
+}
+#edu-widget .dashboard-painel-no-border > .dashboard-portlet-header-config .widget-panel .panel-heading {
+  border-top: 1px solid  transparent !important;
+  border-left: 9px solid  transparent;
+}
+.dashboard-on-drag .dashboard-portlet-header-config .pull-left-widget select {
+  border-top: 1px solid #278495 !important;
+}
+.dadosPessoais > .page-details > .row > .media {
+  background-color: rgba(214, 214, 214, 0.42);
+}
+.dadosPessoais > .page-details > .row > .media > .media-body > div > div > span {
+  color: #666666;
+}
+.dadosPessoais > .page-details > .row > .media > .media-body > div > div > .ng-scope > .ng-scope > span {
+  color: #666666;
+}
+.dadosPessoais > .page-details > .row > section.ng-scope {
+  color: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+.dadosPessoais > .page-details > .row > .media > .media-body > div > .field-label,
+.page-details-infogroup h4,
+.dadosPessoais legend {
+  color: #278495;
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > .k-grid-header > tr > th.k-header {
+  background-color: #6d7e82;
+  color: #fff;
+  border-left-color: rgba(88, 111, 111, 0.46) !important;
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr > .gridRow.quadro-horario-hora,
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr .gridRow.quadro-horario-celula {
+  color: #666666;
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr > .gridRow.quadro-horario-hora span:hover,
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr .gridRow.quadro-horario-celula span:hover {
+  color: #066d8e;
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr > td.quadro-horario-hora {
+  background-color: rgba(154, 181, 190, 0.7);
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr > .quadro-horario-celula.selectedCol {
+  background-color: rgba(243, 202, 202, 0.54) !important;
+}
+.totvs-style-guide > .page-content > span.ng-scope > .k-grid > table > tbody > tr.k-alt {
+  background-color: #f5f5f5;
+}
+.k-scheduler-toolbar .k-scheduler-navigation li.k-state-default,
+.k-scheduler-toolbar .k-scheduler-views li.k-state-default {
+  background: #fff;
+  color: #666666;
+}
+.k-scheduler-toolbar .k-scheduler-navigation li.k-state-default a,
+.k-scheduler-toolbar .k-scheduler-views li.k-state-default a {
+  color: #6d7e82;
+}
+.k-scheduler-toolbar .k-scheduler-navigation li.k-state-selected,
+.k-scheduler-toolbar .k-scheduler-views li.k-state-selected {
+  background: #e7e7e7;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.07);
+}
+.k-scheduler-toolbar .k-scheduler-navigation li.k-state-hover,
+.k-scheduler-toolbar .k-scheduler-views li.k-state-hover {
+  background: #d5d5d5;
+  background-image: linear-gradient(to bottom, #e1e6eb, #fff);
+}
+.k-scheduler .k-scheduler-toolbar .k-state-selected,
+.k-state-selected {
+  border: 1px solid #82bfbf !important;
+  background-color: rgba(130, 191, 191, 0.46) !important;
+}
+.k-state-selected a,
+.k-state-hover a {
+  color: #666666 !important;
+}
+.scheduler-class .k-scheduler-weekview,
+.scheduler-class .k-scheduler-dayview,
+.scheduler-class .k-scheduler-monthview,
+.scheduler-class .k-scheduler-agendaview {
+  /*Dia, Semana, Mês e Agenda*/
+}
+.scheduler-class .k-scheduler-weekview > tbody > tr > td > .k-scheduler-header,
+.scheduler-class .k-scheduler-dayview > tbody > tr > td > .k-scheduler-header,
+.scheduler-class .k-scheduler-monthview > tbody > tr > td > .k-scheduler-header,
+.scheduler-class .k-scheduler-agendaview > tbody > tr > td > .k-scheduler-header {
+  /*background-color: @color-base-portal-06;*/
+}
+.scheduler-class .k-scheduler-weekview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th,
+.scheduler-class .k-scheduler-dayview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th,
+.scheduler-class .k-scheduler-monthview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th,
+.scheduler-class .k-scheduler-agendaview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th {
+  background-color: #6d7e82;
+}
+.scheduler-class .k-scheduler-weekview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th > .k-link,
+.scheduler-class .k-scheduler-dayview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th > .k-link,
+.scheduler-class .k-scheduler-monthview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th > .k-link,
+.scheduler-class .k-scheduler-agendaview > tbody > tr > td > .k-scheduler-header > .k-scheduler-header-wrap > table > tbody > tr > th > .k-link {
+  color: #fff;
+}
+.k-scheduler-header-wrap > div > .k-event,
+.k-scheduler-content > div.k-event,
+.k-scheduler-mark,
+.k-scheduler-content > div.k-event > div > .k-event-template,
+.k-event-template > div {
+  border-bottom: 1px solid #fff !important;
+  color: #666666 !important;
+}
+.k-scheduler-header-all-day td.k-today {
+  background-color: #f3c9ca !important;
+}
+.k-grid-header table {
+  background-color: #6d7e82 !important;
+}
+.btnExpandGrid > label {
+  color: #066d8e !important;
+}
+.page-content.gradeCurricul > .tabset > .nav-tabs > li {
+  color: #666666;
+}
+.page-content.gradeCurricul > .tabset > .nav-tabs > li > a:hover,
+.page-content.gradeCurricul > .tabset > .nav-tabs > li a:focus,
+.page-content.gradeCurricul > .tabset > .nav-tabs > li a:active {
+  color: #666666;
+  background-color: none !important;
+}
+.page-content.gradeCurricul > .tabset > .nav-tabs > li.active,
+.page-content.gradeCurricul > .tabset > .nav-tabs li.hover,
+.page-content.gradeCurricul > .tabset > .nav-tabs li.focus {
+  color: #666666;
+}
+.page-content.gradeCurricul > .tabset > .tab-content > .tab-pane > div > .btn-group {
+  color: #666666;
+}
+.page-content.gradeCurricul > .tabset > .tab-content > .tab-pane > div > .btn-group > .btn-default {
+  color: #666666;
+  background-color: transparent;
+  border-top: 1px solid transparent;
+  border-left: 7px solid transparent;
+}
+.page-content.gradeCurricul > .tabset > .tab-content > .tab-pane > div > .btn-group > .btn-default.active {
+  color: #278495;
+  background-color: transparent;
+  border-top: 1px solid #278495;
+  border-left: 7px solid #278495;
+}
+.page-content.gradeCurricul > .tabset > .tab-content > .tab-pane > div > .btn-group > .btn-default:hover {
+  color: #666666;
+  background-color: transparent;
+  border-top: 1px solid #d6d6d6;
+  border-left: 7px solid #d6d6d6;
+}
+.page-content.gradeCurricul > .tabset > .tab-content > .tab-pane > div > .detalhesGradeCurricular > div > h6.clickable {
+  background-color: rgba(37, 123, 146, 0.15);
+}
+.dadosDisciplinaEB > .detalhesGradeCurricular > div > h6.clickable {
+  background-color: rgba(37, 123, 146, 0.15);
+}
+.gradeCurricularDestaqueEquivalencia,
+tr.gradeCurricularDestaqueEquivalencia:hover {
+  background-color: #27a9c9 !important;
+  color: white !important;
+}
+.gradeCurricularDestaqueEquivalencia td a {
+  color: white !important;
+}
+.nav-tabs > li > a {
+  color: #49afc9;
+  border-bottom: 2px solid transparent !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover,
+.nav > li > a:focus,
+.nav > li > a:hover {
+  color: #49afc9;
+  background-color: transparent !important;
+  border-bottom: 2px solid #49afc9 !important;
+}
+span.tooltip-top[data-tooltip]:hover:after {
+  background-color: #666666 !important;
+  color: #fff !important;
+}
+.cc-selector input {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  /*appearance: none;*/
+  visibility: hidden;
+}
+.cc-selector-2 input {
+  position: absolute;
+  z-index: 999;
+}
+.pgto-cartao .visa:hover,
+.pgto-cartao .cc-selector-2 input:active + .visa,
+.pgto-cartao .cc-selector input:active + .visa,
+.pgto-cartao .cc-selector-2 input:checked + .visa,
+.pgto-cartao .cc-selector input:checked + .visa {
+  background-image: url('../img/visa.png');
+}
+.pgto-cartao .mastercard:hover,
+.pgto-cartao .cc-selector-2 input:active + .mastercard,
+.pgto-cartao .cc-selector input:active + .mastercard,
+.pgto-cartao .cc-selector-2 input:checked + .mastercard,
+.pgto-cartao .cc-selector input:checked + .mastercard {
+  background-image: url('../img/mastercard.png');
+}
+.pgto-cartao .visaelectron:hover,
+.pgto-cartao .cc-selector-2 input:active + .visaelectron,
+.pgto-cartao .cc-selector input:active + .visaelectron,
+.pgto-cartao .cc-selector-2 input:checked + .visaelectron,
+.pgto-cartao .cc-selector input:checked + .visaelectron {
+  background-image: url('../img/visaElectron.png');
+}
+.pgto-cartao .visa {
+  background-image: url('../img/visa-gray.png');
+}
+.pgto-cartao .mastercard {
+  background-image: url('../img/mastercard-gray.png');
+}
+.pgto-cartao .visaelectron {
+  background-image: url('../img/visaElectron-gray.png');
+}
+.pgto-cartao .drinkcard-cc {
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100px;
+  height: 40px;
+}
+#table-matricula-simulacao-pagamento {
+  max-height: 485px;
+  display: grid;
+  align-content: start;
+}
+#table-matricula-simulacao-pagamento tbody {
+  display: block;
+  overflow-y: auto;
+}
+#table-matricula-simulacao-pagamento thead,
+#table-matricula-simulacao-pagamento tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.label-valor-simulado {
+  text-align: center;
+  color: #4A5C60;
+  font-size: 16px;
+  top: 372px;
+  left: 579px;
+  height: 22px;
+  letter-spacing: 0px;
+  opacity: 1;
+  margin: auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  font-weight: bold;
+}
+.aceite-alteracao-data-vencimento {
+  padding-top: 20px;
+}
+.caret-visible {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid\9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.item-button-dropdown {
+  cursor: pointer;
+  letter-spacing: 0px;
+  color: #278495 !important;
+  opacity: 1;
+}
+.calendario-view .input-group {
+  margin: -17px 0 0 8px;
+}
+.panel-info-matricula .panel-body .table thead tr.itinerario-formativo {
+  background-color: #c7d7e4;
+  color: #31708f;
+}
+.panel-info-matricula .panel-body .table thead tr.itinerario-formativo th {
+  border: 0;
+}
+.panel-info-matricula .panel-body .table thead tr.disc-itinerario-formativo th {
+  background-color: #6d7e82;
+  border-left-color: rgba(88, 111, 111, 0.46) !important;
+  color: #fff;
+}
+.panel-agrupamento-itinerario-matricula {
+  margin-bottom: 30px !important;
+}
+.panel-agrupamento-itinerario-matricula .panel-heading strong {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.dados-itinerario-formativo-matricula {
+  margin-left: 10px;
+}
+.agrupamento-itinerario-formativo-matricula {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.descricao-agrupamento-itinerario-matricula {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: rgba(37, 123, 146, 0.15);
+  padding-left: 30px;
+  border-radius: 6px;
+}
+.subdetalhe-grid {
+  padding-bottom: 20px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.panel-agrupamento-itinerario-matricula input[type="checkbox"] {
+  accent-color: #189ABE;
+}
+.panel-agrupamento-itinerario-matricula .descricao-itinerario-matricula-grid {
+  margin-bottom: 15px;
+  margin-top: -5px;
+}
+.panel-agrupamento-itinerario-matricula .nome-itinerario-matricula-grid .table {
+  margin-bottom: 15px;
+}
+.panel-agrupamento-itinerario-matricula .table-responsive.nome-itinerario-matricula-grid {
+  margin-bottom: 0;
+  border: 0;
+}
+.panel-agrupamento-itinerario-matricula .nome-itinerario-matricula-grid table th {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.agrupador-disc-qtd-itinerario {
+  margin: -5px 0px 10px 0px;
+}
+.agrupador-qtd-itinerario {
+  margin: 5px 0px 10px 0px;
+}
+.agrupador-qtd-itinerario .list-group,
+.agrupador-disc-qtd-itinerario .list-group {
+  margin-bottom: 1px;
+}
+.agrupador-qtd-itinerario ul:not(:last-child),
+.agrupador-disc-qtd-itinerario ul:not(:last-child) {
+  padding-right: 10px;
+}
+.agrupador-disc-qtd-itinerario ul > li {
+  background-color: transparent;
+}
+.caixa-disc-qtd-itinerario > span,
+.caixa-qtd-itinerario > span {
+  background-color: #777;
+}
+.caixa-disc-qtd-itinerario-validado,
+.caixa-qtd-itinerario-validado {
+  border: 1px solid #189ABE;
+  font-size: 100%;
+  opacity: 1;
+}
+.caixa-disc-qtd-itinerario-validado > span,
+.caixa-qtd-itinerario-validado > span {
+  background-color: #189ABE;
+}
+.caixa-disc-qtd-itinerario-atencao,
+.caixa-qtd-itinerario-atencao {
+  border: 1px solid #C64840;
+  font-size: 100%;
+  opacity: 1;
+}
+.caixa-disc-qtd-itinerario-atencao > span,
+.caixa-qtd-itinerario-atencao > span {
+  background-color: #bd362f;
+}
+.panel-agrupamento-itinerario-matricula .k-filter-row th,
+.k-grid-header th.k-header {
+  border-width: 0;
+}
+.agrupador-titulo-step-itinerario {
+  margin-left: -9px;
+  margin-bottom: 16px;
+  align-items: center;
+  font-size: 23px;
+}
+.table-responsive.nome-itinerario-matricula-grid span.descricao-itinerario-obrigatorio-matricula {
+  text-transform: none;
+  color: #666666;
+  font-weight: 100;
+  font-size: 11px;
+  padding-left: 10px;
+}
+.descricao-step-itinerario {
+  padding-bottom: 10px;
+}
+.icon-engine-itinerario {
+  width: 40px;
+  padding-right: 10px;
+}
+.h4-alterar-senha {
+  margin: 15px;
+  color: #278495;
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: 22px;
+}
+.senha-em-preto {
+  color: gray !important;
+}
+.senha-em-vermelho {
+  color: #ca1b1b !important;
+}
+.lista-legenda-title {
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2a95af;
+  padding-left: 2.2rem;
+}
+.lista-legenda {
+  list-style-type: none;
+  padding-left: 4rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+.legenda-colorBox-cobrancaTerceirizada {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: orange;
+}
+.legenda-colorBox-boletoInativo {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #4080bf;
+}
+.legenda-colorBox-boletoCancelado {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #a2a276;
+}
+.lista-legenda-mensagem {
+  padding-left: 0.5rem;
+  overflow-wrap: break-word;
+}
+.cobranca-terceirizada {
+  padding-left: 0;
+  border-left: 7px solid orange;
+}
+.boleto-cancelado {
+  padding-left: 0;
+  border-left: 7px solid #a2a276;
+}
+.boleto-inativado {
+  padding-left: 0;
+  border-left: 7px solid #4080bf;
+}
+.panel-legenda {
+  padding-top: 2rem;
+}
+#divResumoIntegralizacaoCH.panel-body {
+  min-height: 167px;
+}
+.colTotCHIntegralizada {
+  margin-right: 0.8rem;
+}
+.item-title-plano-aula {
+  cursor: pointer;
+}
+.beneficio-ativo {
+  padding-left: 0;
+  border-left: 7px solid #a2a276;
+}
+.beneficio-inativo {
+  padding-left: 0;
+  border-left: 7px solid #4080bf;
+}
+.legenda-colorBox-beneficioAtivo {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #a2a276;
+}
+.legenda-colorBox-beneficioInativo {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #4080bf;
+}
+.panel-titulo-itinerario {
+  display: flex;
+  justify-content: space-between;
+}
+.panel-validacoes {
+  margin-left: -12px;
+  margin-right: -16px;
+  width: 25%;
+}
+.panel-validacoes > .list-group {
+  padding: 1px;
+  margin-bottom: 10px;
+}
+.mensagem-info-matricula {
+  margin-left: 12px;
+  padding-right: 20px;
+}
+.matricula-finalizada {
+  margin-left: 18px;
+  margin-right: 18px;
+}
+.mensagem-info-matricula-itinerario-menu-exclusivo {
+  margin-left: -10px !important;
+  margin-right: -10px !important;
+}
+.div-header-matricula-itinerario-menu-exclusivo {
+  display: flex;
+}
+.li-qtd-ou-ch {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.div-group-header {
+  margin-bottom: 24px;
+}
+.h2-header-matricula-itinerario-menu-exclusivo {
+  margin-left: 5px;
+}
+.btn-confirmar-matricula {
+  float: right;
+}
+.selecao-periodo-letivo-menu-exclusivo-itinerario {
+  width: 250px;
+}
+
+.k-grid-header>.k-grid-header-wrap.k-auto-scrollable>table>thead>tr>th>a,
+.k-grid-header>.k-grid-header-wrap.k-auto-scrollable>table>thead>tr>th a.k-link {
+    color: #fff;
+    text-align: center;
+}

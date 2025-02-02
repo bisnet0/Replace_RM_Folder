@@ -1,0 +1,97 @@
+<style type="text/css">
+
+    #sidebar-min, #menu-lateral, #menu-structure,
+    #menu-desktop .menu-block {
+        background: none;
+        background-color: {{desktop.objParamsHeader.CorMenu}};
+        color: {{desktop.objParamsHeader.CorFonteMenu}};
+    }
+
+</style>
+<div id="sidebar-min">
+    <ul class="list-unstyled">
+       <li id="show-menu" ng-click="desktop.toggleMenu();" class="item-menu">
+            <span title="{{'l-menu' | i18n}}">
+                <span class="ico-menu"></span>
+           </span>
+       </li>
+       <li ng-repeat="objMenu in desktop.objMenuList track by $index"
+            ng-class="{'active': objMenu === desktop.selectedMenu}"
+            ng-click="desktop.openMenuClick(objMenu)"
+            ng-hide="objMenu.submenus.length === 0 && objMenu.url === '#'">
+            <span title="{{ objMenu.name }}">
+                <span class="{{objMenu.icon}}"></span>
+            </span>
+            <span ng-show="(objMenu.submenus.length > 0)" class="glyphicon ico-chevron-down"></span>
+        </li>
+    </ul>
+</div>
+<!-- Overlay -->
+<div id="menu-overlay" ng-click="desktop.toggleMenu()" style="cursor:pointer"></div>
+
+<div class="pull-left total-height" id="menu-lateral" >
+    <!-- ESTRUTURA DO MENU -->
+    <div class="menu-block disable-select" id="menu-structure">
+        <div id="menu-applications">
+            <div class="menu-group">
+                <span class="pull-left" ng-click="desktop.toggleMenu()">
+                    <span class="ico-menu"></span>
+                </span>
+                <span class="pull-right hidden-xs" ng-click="desktop.fixedMenu()">
+                    <span class="ico-pin"></span>
+                </span>
+                <br clear="all" />
+            </div>
+            <div id="menu-modules">
+                <ul class="list-unstyled" ng-repeat="objMenu in desktop.objMenuList track by $index">
+                    <li class="menu-item" id="{{objMenu.id}}"
+                        title="{{objMenu.name}}"
+                        ng-class="{'active': objMenu === desktop.selectedMenu}"
+                        ng-if="(objMenu.url != '#')"
+                        ng-click="desktop.openMenuClick(objMenu)">
+                        <span class="menu-item-text">
+                            <span class="{{objMenu.icon}}"></span>
+                            <label>{{objMenu.name}}</label>
+                        </span>
+                    </li>
+                    <li class="menu-item" id="{{objMenu.id}}"
+                        title="{{objMenu.name}}"
+                        ng-class="{'active': objMenu === desktop.selectedMenu}"
+                        ng-if="(objMenu.submenus.length > 0 && objMenu.url === '#') || objMenu.submenus.length > 0">
+                        <span class="menu-item-text" ng-click="desktop.openMenuClick(objMenu)">
+                            <span class="{{objMenu.icon}}"></span>
+                            <span ng-show="(objMenu.submenus.length > 0)" class="glyphicon ico-chevron-down"></span>
+                            <label>{{objMenu.name}}</label>
+                        </span>
+                        <ul class="submenu-item list-unstyled">
+                            <li ng-repeat="objSubMenu in objMenu.submenus track by $index"
+                                class="menu-item" id="{{objSubMenu.id}}"
+                                title="{{objSubMenu.name}}"
+                                ng-class="{'active': objSubMenu === desktop.selectedMenu}"
+                                ng-click="desktop.openMenuClick(objSubMenu)">
+                                <span class="menu-item-text">
+                                    {{objSubMenu.name}}
+                                </span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+				
+				<ul class="list-unstyled" onclick="virtualLibrary(event)">
+                    <li class="menu-item" style="display: flex; gap: 15px;"><span class="ico-book"></span>Biblioteca
+                        virtual</li>
+                </ul>
+                <ul id="ebsco" class="list-unstyled"
+                    onclick="window.open('https://search.ebscohost.com/login.aspx?authtype=url,uid&custid=ns110797&groupid=main&profile=ehost')">
+                    <li class="menu-item" style="display: flex; gap: 15px;"><span class="ico-book"></span>Biblioteca
+                        EBSCO</li>
+                </ul>
+                <ul id="ava" class="list-unstyled" onclick="window.open('https://ensinofan.com.br/')">
+                    <li class="menu-item" style="display: flex; gap: 15px;"><span class="ico-mural"></span>AVA - ALUNOS
+                    </li>
+                </ul>
+				
+            </div>
+        </div>
+    </div>
+</div>
