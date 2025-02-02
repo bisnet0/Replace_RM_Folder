@@ -69,12 +69,12 @@ def menu_interativo():
     
     if escolha == '1':
         # Defina os caminhos para personalizar a UNIFAN
-        lista_caminhos = [1
+        lista_caminhos = [
             (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\Corpore.Net', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\Corpore.Net'),
             (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalDoProfessor', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalDoProfessor'),
             (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalEducacional', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalEducacional'),
             (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\PortalGestaoEducacional', r'C:\Users\Henrique Bisneto\Documents\totvs\CorporeRM\FrameHTML\Web\App\Edu\PortalGestaoEducacional'),
-            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\SmartView', r'C:\Users\Henrique Bisneto\Documents\totvs\TReports\smart-view\deployments')
+            (r'C:\Users\Henrique Bisneto\Documents\personalização-portais\personalização-portais\UNIFAN\SmartView\deployments', r'C:\Users\Henrique Bisneto\Documents\totvs\TReports\smart-view\deployments')
         ]
         substituir_varias_pastas(lista_caminhos)
     elif escolha == '2':
